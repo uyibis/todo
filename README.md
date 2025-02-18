@@ -1,66 +1,120 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# To-Do List Web App
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+This is a simple To-Do List web application that allows users to manage their tasks. It is built using **Vue.js** for the frontend, **Laravel** for the backend, and **MySQL** for data storage.
 
-## About Laravel
+## Features
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- **Add Task:** Users can add tasks to their to-do list.
+- **Update Task:** Users can edit the details of a task.
+- **Delete Task:** Users can remove tasks from the list.
+- **Input Validation:** Tasks must be between 10 and 50 characters.
+- **Error Handling:** Error messages are displayed when required fields are empty or invalid.
+- **User-friendly UI:** A clean and responsive interface built with Vue.js and Bootstrap.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Tech Stack
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- **Frontend:** Vue.js, Bootstrap
+- **Backend:** Laravel (PHP)
+- **Database:** MySQL
 
-## Learning Laravel
+## Live Demo
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+You can try the live version of the application here:  
+[https://todo.ips.ng/](https://todo.ips.ng/)
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## Prerequisites
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Before running this application locally, ensure you have the following installed:
 
-## Laravel Sponsors
+- **PHP 8.x** or higher
+- **Laravel 8.x** or higher
+- **Node.js and NPM**
+- **MySQL**
+- **Composer** (for Laravel dependencies)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## Installation
 
-### Premium Partners
+### 1. Clone the Repository
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+```bash
+git clone https://github.com/uyibis/todo.git
+cd todo
+```
 
-## Contributing
+### 2. Backend Setup (Laravel)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- **Install Laravel Dependencies:**
 
-## Code of Conduct
+```bash
+composer install
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+- **Set up the environment:**
 
-## Security Vulnerabilities
+Copy the `.env.example` file to `.env` and configure the database settings:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```bash
+cp .env.example .env
+```
+
+Edit `.env` and set the `DB_HOST`, `DB_DATABASE`, `DB_USERNAME`, and `DB_PASSWORD` variables to match your MySQL configuration.
+
+- **Generate the Application Key:**
+
+```bash
+php artisan key:generate
+```
+
+- **Run the Migrations:**
+
+```bash
+php artisan migrate
+```
+
+### 3. Frontend Setup (Vue.js)
+
+- **Install Node Dependencies:**
+
+```bash
+npm install
+```
+
+- **Run the Development Server:**
+
+```bash
+npm run dev
+```
+
+### 4. Start the Application
+
+- **Run the Laravel Server:**
+
+```bash
+php artisan serve
+```
+
+Now the application should be running at [http://localhost:8000](http://localhost:8000).
+
+## Usage
+
+- Open the application in your browser.
+- Add tasks, update, or delete them as needed.
+- The tasks will persist in the MySQL database.
+
+## Future Improvements
+
+- **Authentication:** Add user authentication for task personalization.
+- **Task Categorization:** Implement tags or categories for better organization.
+- **Task Priorities:** Allow setting priorities for tasks.
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This project is open-source and available under the MIT License.
+
+## Contact
+
+For any questions or inquiries, feel free to reach out to me on [GitHub](https://github.com/uyibis).
+
+---
+
+Enjoy managing your tasks! 😊
